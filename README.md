@@ -68,7 +68,9 @@ Reviser : Hyungtae Lim (shapelim@kaist.ac.kr)
 
 ## Consideration
 
-**/vrpn_client_node/turtleBot/pose**: Pose captured from the motion caputre system, OptiTrack (Ground Truth).
+**/vrpn_client_node/turtleBot/pose**: Pose captured from the motion caputre system, OptiTrack (Ground Truth).\
+
 **/odom**: 2D pose from Turtlebot2.
+
 **/scan**: 2D LiDAR data measured by RP LiDAR A1M8.
 
