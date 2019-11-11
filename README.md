@@ -13,6 +13,10 @@ Originally, it is RE510 materials at KAIST implemented by Seungwon Song as a TA.
 Original author: Seungwon Song (sswan55@kaist.ac.kr) <br>
 Reviser : Hyungtae Lim (shapelim@kaist.ac.kr)  
 
+### Dependency libraries
+
+* Eigen (default version of ROS)
+* opencv (default version of ROS)
 ---
 
 ## Results
