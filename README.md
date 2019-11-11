@@ -8,7 +8,7 @@
 
 These codes are implemented only using OpenCV library! So It might be helpful for newbies to understand overall MCL procedures
 
-Originally, it is RE510 materials implemented by Seungwon Song as a TA.
+Originally, it is RE510 materials at KAIST implemented by Seungwon Song as a TA.
 
 Original author: Seungwon Song (sswan55@kaist.ac.kr) <br>
 Reviser : Hyungtae Lim (shapelim@kaist.ac.kr)  
@@ -28,7 +28,8 @@ Reviser : Hyungtae Lim (shapelim@kaist.ac.kr)
 ## Usage
 0. Setting
     1. Download this repository 
-    <pre><code>git clone git@gitlab.com:ShapeLim/ros_mcl_cpp.git</code></pre>
+    <pre><code>$ cd /home/$usr_name/catkin_ws/src</code></pre>
+    <pre><code>https://github.com/LimHyungTae/mcl_2d_lidar_ros.git</code></pre>
     2. Build this ros code as follows.
     <pre><code>$ cd /home/$usr_name/catkin_ws</code></pre>
     <pre><code>$ catkin_make re510_slam</code></pre>
@@ -40,7 +41,7 @@ Reviser : Hyungtae Lim (shapelim@kaist.ac.kr)
 
     1. Move to the repository e.g,
   
-    <pre><code>$ cd /home/$usr_name/catkin_ws/src/ros_mcl_cpp</code></pre>
+    <pre><code>$ cd /home/$usr_name/catkin_ws/src/mcl_2d_lidar_ros</code></pre>
 
     2. Play rosbag **re510_mapgen.bag**
 
@@ -54,7 +55,7 @@ Reviser : Hyungtae Lim (shapelim@kaist.ac.kr)
 
     1. Move to the repository e.g,
   
-    <pre><code>$ cd /home/$usr_name/catkin_ws/src/ros_mcl_cpp</code></pre>
+    <pre><code>$ cd /home/$usr_name/catkin_ws/src/mcl_2d_lidar_ros</code></pre>
 
     2. Play rosbag **re510_mcl.bag**
 
@@ -67,4 +68,7 @@ Reviser : Hyungtae Lim (shapelim@kaist.ac.kr)
 
 ## Consideration
 
-WBD
+**/vrpn_client_node/turtleBot/pose**: Pose captured from the motion caputre system, OptiTrack (Ground Truth).
+**/odom**: 2D pose from Turtlebot2.
+**/scan**: 2D LiDAR data measured by RP LiDAR A1M8.
+
