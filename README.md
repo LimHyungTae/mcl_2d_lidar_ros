@@ -65,7 +65,9 @@ Reviser : Hyungtae Lim (shapelim@kaist.ac.kr)
 
     <pre><code>$ rosbag play rosbag/rs_mcl.bag</code></pre>
 
-    3. Run MCL code
+    3. Change the paths of png: 7 and 8th lines on the re510_slam/rs_mcl/src/mcl.cpp
+    
+    4. Run MCL code
 
     <pre><code>$ rosrun re510_slam rs_mcl</code></pre>
 
