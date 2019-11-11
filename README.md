@@ -30,6 +30,9 @@ Reviser : Hyungtae Lim (shapelim@kaist.ac.kr)
 ![mcl](./results/gif/mcl.gif)
 ---
 ## Usage
+
+<pre><code>$ roscore</code></pre>
+
 0. Setting
     1. Download this repository 
     <pre><code>$ cd /home/$usr_name/catkin_ws/src</code></pre>
@@ -49,7 +52,7 @@ Reviser : Hyungtae Lim (shapelim@kaist.ac.kr)
 
     2. Play rosbag **re510_mapgen.bag**
 
-    <pre><code>$ rosbag play rosbag/rs_mapgen.bag</code></pre>
+    <pre><code>$ rosbag play rosbag/re510_mapgen.bag -r 3</code></pre>
 
     3. Run mapgen code
 
@@ -63,7 +66,7 @@ Reviser : Hyungtae Lim (shapelim@kaist.ac.kr)
 
     2. Play rosbag **re510_mcl.bag**
 
-    <pre><code>$ rosbag play rosbag/rs_mcl.bag</code></pre>
+    <pre><code>$ rosbag play rosbag/re510_mcl.bag</code></pre>
 
     3. Change the paths of png: 7 and 8th lines on the re510_slam/rs_mcl/src/mcl.cpp
     
