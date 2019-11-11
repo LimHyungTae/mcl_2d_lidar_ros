@@ -68,7 +68,7 @@ Reviser : Hyungtae Lim (shapelim@kaist.ac.kr)
 
 ## Consideration
 
-**/vrpn_client_node/turtleBot/pose**: Pose captured from the motion caputre system, OptiTrack (Ground Truth).\
+**/vrpn_client_node/turtleBot/pose**: Pose captured from OptiTrack, which is a motion caputre system(Ground Truth).
 
 **/odom**: 2D pose from Turtlebot2.
 
