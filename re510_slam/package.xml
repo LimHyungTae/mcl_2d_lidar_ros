@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package>
+  <name>re510_slam</name>
+  <version>0.0.0</version>
+  <description>The re510_slam package</description>
+
+  <maintainer email="sswan55@kaist.ac.kr">Seungwon Song</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <run_depend>roscpp</run_depend>
+
+  <build_depend>std_msgs</build_depend>
+  <run_depend>std_msgs</run_depend>
+
+  <build_depend>rospy</build_depend>
+  <run_depend>rospy</run_depend>
+
+  <build_depend>geometry_msgs</build_depend>
+  <run_depend>geometry_msgs</run_depend>
+
+  <build_depend>nav_msgs</build_depend>
+  <run_depend>nav_msgs</run_depend>
+
+  <build_depend>sensor_msgs</build_depend>
+  <run_depend>sensor_msgs</run_depend>
+
+<build_depend>eigen</build_depend>
+
+</package>
