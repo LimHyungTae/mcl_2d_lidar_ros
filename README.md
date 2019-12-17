@@ -36,7 +36,7 @@ Reviser : Hyungtae Lim (shapelim@kaist.ac.kr)
 0. Setting
     1. Download this repository 
     <pre><code>$ cd /home/$usr_name/catkin_ws/src</code></pre>
-    <pre><code>$ https://github.com/LimHyungTae/mcl_2d_lidar_ros.git</code></pre>
+    <pre><code>$ git clone https://github.com/LimHyungTae/mcl_2d_lidar_ros.git</code></pre>
     2. Build this ros code as follows.
     <pre><code>$ cd /home/$usr_name/catkin_ws</code></pre>
     <pre><code>$ catkin_make re510_slam</code></pre>
