@@ -1,10 +1,10 @@
 #include <ros/ros.h>
 #include "src/mapgen.h"
 
-std::vector<Eigen::Matrix4f> vec_poses;
-std::vector<double> vec_poses_time;
-std::vector<Eigen::Matrix4Xf> vec_lasers;
-std::vector<double>vec_lasers_time;
+std::deque<Eigen::Matrix4f> vec_poses;
+std::deque<double> vec_poses_time;
+std::deque<Eigen::Matrix4Xf> vec_lasers;
+std::deque<double>vec_lasers_time;
 Eigen::Matrix4f tf_mocap2pose;
 
 mapgen mapgenerator;
@@ -15,6 +15,7 @@ void check_data();
 int main(int argc, char **argv)
 {
   ros::init(argc, argv, "rs_mapgen");
+  std::cout << "\033[1;32mMapGen started\033[0m"  << std::endl;
   ros::NodeHandle nh;
   tf_mocap2pose<< -0.9961947,  0.0871557, 0,0,
                   0.0871557,   0.9961947, 0,0,
@@ -37,22 +38,22 @@ void check_data()
     {
       if(vec_poses_time[0]>vec_lasers_time[0])
       {
-        vec_lasers.erase(vec_lasers.begin());
-        vec_lasers_time.erase(vec_lasers_time.begin());
+        vec_lasers.pop_front();
+        vec_lasers_time.pop_front();
       }
       else
       {
-        vec_poses.erase(vec_poses.begin());
-        vec_poses_time.erase(vec_poses_time.begin());
+        vec_poses.pop_front();
+        vec_poses_time.pop_front();
       }
     }
     else
     {
       mapgenerator.updateMap(vec_poses[0],vec_lasers[0]);
-      vec_lasers.erase(vec_lasers.begin());
-      vec_lasers_time.erase(vec_lasers_time.begin());
-      vec_poses.erase(vec_poses.begin());
-      vec_poses_time.erase(vec_poses_time.begin());
+      vec_lasers.pop_front();
+      vec_lasers_time.pop_front();
+      vec_poses.pop_front();
+      vec_poses_time.pop_front();
     }
   }
 }
@@ -74,8 +75,8 @@ void callback_laser(const sensor_msgs::LaserScan::ConstPtr &msg)
       eigenLaser(3,scanEffective-1) =  1;
     }
   }
-  vec_lasers.push_back(eigenLaser);
-  vec_lasers_time.push_back(msg->header.stamp.toSec());
+  vec_lasers.emplace_back(eigenLaser);
+  vec_lasers_time.emplace_back(msg->header.stamp.toSec());
   check_data();
 }
 
@@ -89,7 +90,7 @@ void callback_pose(const geometry_msgs::PoseStamped::ConstPtr &msg)
               m[2][0], m[2][1], m[2][2], msg->pose.position.z,
               0,0,0,1;
   eigenPose = eigenPose * tf_mocap2pose;
-  vec_poses.push_back(eigenPose);
-  vec_poses_time.push_back(msg->header.stamp.toSec());
+  vec_poses.emplace_back(eigenPose);
+  vec_poses_time.emplace_back(msg->header.stamp.toSec());
   check_data();
 }
